@@ -13,6 +13,10 @@ Install and manage AI agent skills from categorized CSV lists via `npx skills`.
 `skillless` wraps [`npx skills`](https://github.com/anthropics/skills) with category-based CSV lists so you can install,
 update, and remove groups of skills in one shot instead of running `npx skills add` for each one individually.
 
+It also includes local skills that can be packed from this repository. **Fabled** is a six-phase workflow skill for
+non-trivial one-shot build requests: reconstruct intent, decide scope, design first, build completely, verify, then
+deliver something a human can run or use.
+
 ```
 skillless pack python     # install all Python skills
 skillless unpack react    # remove all React skills
@@ -62,7 +66,7 @@ skillless pack python
 
 | Category   | Skills | Category | Skills |
 |------------|--------|----------|--------|
-| default    | 33     | kotlin   | 6      |
+| default    | 34     | kotlin   | 6      |
 | database   | 13     | laravel  | 5      |
 | swift      | 9      | nest     | 5      |
 | java       | 8      | prisma   | 3      |
@@ -71,7 +75,8 @@ skillless pack python
 | typescript | 4      | backend  | 3      |
 | django     | 3      | cpp      | 3      |
 | go         | 3      | android  | 2      |
-| stock      | 1      | opencode | 2      |
+| experimental | 2    | stock    | 1      |
+| opencode   | 1      |          |        |
 
 Use `skillless list` for the current counts.
 
@@ -110,12 +115,14 @@ wshobson/agents,
 
 ```
 skillless           # Main CLI entrypoint
-lists/              # Category CSV files (20 categories)
-  default.csv       # Cross-cutting skills (33 entries)
+lists/              # Category CSV files (21 categories)
+  default.csv       # Cross-cutting skills (34 entries)
   python.csv        # Python-specific skills
   ...
 scripts/
   install-skills.sh # Worker that processes CSV rows via npx skills
+skills/
+  fabled/           # Local six-phase build discipline skill
 skills-lock.json    # Lockfile tracking installed skill sources and hashes
 ```
 
