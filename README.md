@@ -132,4 +132,4 @@ reporting — so you get clean, actionable output.
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE.md)
