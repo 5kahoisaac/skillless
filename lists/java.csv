@@ -1,0 +1,9 @@
+repo,skill_name,agents
+affaan-m/everything-claude-code,java-coding-standards,opencode claude-code codex
+affaan-m/everything-claude-code,springboot-patterns,opencode claude-code codex
+affaan-m/everything-claude-code,springboot-tdd,opencode claude-code codex
+affaan-m/everything-claude-code,springboot-verification,opencode claude-code codex
+github/awesome-copilot,java-docs,opencode claude-code codex
+github/awesome-copilot,java-junit,opencode claude-code codex
+github/awesome-copilot,java-refactoring-extract-method,opencode claude-code codex
+github/awesome-copilot,java-springboot,opencode claude-code codex

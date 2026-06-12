@@ -1,0 +1,7 @@
+repo,skill_name,agents
+affaan-m/everything-claude-code,kotlin-coroutines-flows,opencode claude-code codex
+affaan-m/everything-claude-code,kotlin-exposed-patterns,opencode claude-code codex
+affaan-m/everything-claude-code,kotlin-ktor-patterns,opencode claude-code codex
+affaan-m/everything-claude-code,kotlin-patterns,opencode claude-code codex
+affaan-m/everything-claude-code,kotlin-testing,opencode claude-code codex
+kotlin/kotlin-agent-skills,,opencode claude-code codex
