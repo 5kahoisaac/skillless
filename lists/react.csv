@@ -1,0 +1,4 @@
+repo,skill_name,agents
+vercel-labs/agent-skills,vercel-react-best-practices,opencode claude-code codex
+vercel-labs/agent-skills,vercel-react-native-skills,opencode claude-code codex
+vercel-labs/next-skills,,opencode claude-code codex

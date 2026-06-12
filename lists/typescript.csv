@@ -1,0 +1,5 @@
+repo,skill_name,agents
+github/awesome-copilot,javascript-typescript-jest,opencode claude-code codex
+microck/ordinary-claude-skills,javascript-testing-patterns,opencode claude-code codex
+wshobson/agents,modern-javascript-patterns,opencode claude-code codex
+wshobson/agents,typescript-advanced-types,opencode claude-code codex
