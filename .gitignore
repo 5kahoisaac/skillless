@@ -86,6 +86,9 @@ temp/*
 # Keep the dirs themselves for skills/commands
 # =========================
 
+# OhMyOpenagent
+.omo
+
 # Claude Code
 .claude/cache/
 .claude/cache/*

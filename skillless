@@ -5,6 +5,7 @@
 #   skillless [options] pack <category|all>     install a category (e.g. skillless pack react)
 #   skillless [options] unpack <category|all>   remove a category (e.g. skillless unpack react)
 #   skillless list                              show categories and skill counts
+#   skillless upgrade                           update skillless to latest version
 #   skillless help                              show this help
 #
 # Options:
@@ -105,6 +106,7 @@ target="${positional[1]:-}"
 case "$action" in
   help)          usage ;;
   list)          cmd_list ;;
+  upgrade)       git -C "$SCRIPT_DIR" fetch && git -C "$SCRIPT_DIR" reset --hard origin/main ;;
   pack|unpack)   run_action "$action" "$target" ;;
-  *)             die "unknown command '$action' (expected: pack, unpack, list, help)" ;;
+  *)             die "unknown command '$action' (expected: pack, upgrade, unpack, list, help)" ;;
 esac

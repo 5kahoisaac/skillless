@@ -36,6 +36,7 @@ git clone <repo-url>
 cd skillless
 
 # 2. Add a shell alias so `skillless` is available anywhere
+chmod +x skillless
 echo 'alias skillless="'"'$(pwd)'"'/skillless"' >> ~/.zshrc
 source ~/.zshrc
 
