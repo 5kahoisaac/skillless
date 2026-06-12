@@ -1,0 +1,23 @@
+{
+  "skill_name": "bundle-skills",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "/bundle-skills frontend",
+      "expected_output": "Summarizes frontend as a broad bundle, splits it into subgroups such as frameworks, CSS/design, testing, accessibility, and performance, then asks for confirmation before editing files.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Create a bundle for Python data science skills, but tell me whether it should merge into the existing python list first.",
+      "expected_output": "Checks for related lists/*.csv files, identifies lists/python.csv as related, summarizes the merge/create choice, and asks the user before writing.",
+      "files": ["lists/python.csv"]
+    },
+    {
+      "id": 3,
+      "prompt": "Find candidate skills for a React performance bundle and show me install counts plus Gen, Socket, and Snyk risk before adding anything.",
+      "expected_output": "Uses find-skills/skills.sh research, reports candidates with installs and conditional audit metadata, applies the 2K install and two-scanner risk gates, and does not edit CSV files yet.",
+      "files": []
+    }
+  ]
+}
