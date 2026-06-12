@@ -129,3 +129,7 @@ skills-lock.json    # Lockfile tracking installed skill sources and hashes
 
 The install worker handles ANSI output parsing, security risk display (Gen, Socket, Snyk), agent detection, and error
 reporting — so you get clean, actionable output.
+
+## License
+
+[MIT](LICENSE)
