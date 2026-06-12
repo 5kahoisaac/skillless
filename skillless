@@ -1,0 +1,110 @@
+#!/usr/bin/env bash
+# skillless — install/remove agent skills from category CSV lists via `npx skills`.
+#
+# Usage:
+#   skillless [options] pack <category|all>     install a category (e.g. skillless pack react)
+#   skillless [options] unpack <category|all>   remove a category (e.g. skillless unpack react)
+#   skillless list                              show categories and skill counts
+#   skillless help                              show this help
+#
+# Options:
+#   -s, --scope <global|local>   install scope (default: global)
+#   -n, --dry-run                print the commands without running them
+#   -v, --verbose                also print raw `npx skills` output
+#       --skip-update            skip the staleness check (pack only)
+#   -d, --lists-dir <dir>        directory of category CSVs (default: <script>/lists)
+#   -h, --help                   show this help
+set -euo pipefail
+
+SELF="$(basename "$0")"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+LISTS_DIR="$SCRIPT_DIR/lists"
+WORKER="$SCRIPT_DIR/scripts/install-skills.sh"
+
+scope="global"
+dry_run="0"
+verbose="0"
+skip_update="0"
+
+usage() {
+  # Print the leading comment block (skip shebang), stop at first non-comment line.
+  awk 'NR==1 { next } /^#/ { sub(/^# ?/, ""); print; next } { exit }' "${BASH_SOURCE[0]}"
+}
+
+die() { echo "$SELF: $*" >&2; exit 64; }
+
+# Sorted list of category names derived from lists/*.csv basenames.
+categories() {
+  local f name
+  for f in "$LISTS_DIR"/*.csv; do
+    [[ -e "$f" ]] || continue
+    name="$(basename "$f" .csv)"
+    printf '%s\n' "$name"
+  done | sort
+}
+
+cmd_list() {
+  local f name count
+  for f in "$LISTS_DIR"/*.csv; do
+    [[ -e "$f" ]] || continue
+    name="$(basename "$f" .csv)"
+    # data rows = non-blank, non-comment, non-header lines
+    count="$(grep -cv -e '^[[:space:]]*#' -e '^[[:space:]]*$' -e '^repo,skill_name' "$f" || true)"
+    printf '%-12s %s skill(s)\n' "$name" "$count"
+  done
+}
+
+# Run the per-category worker for one category, passing CLI options + action as env.
+run_category() {
+  local action="$1" category="$2" csv="$LISTS_DIR/$2.csv"
+  [[ -f "$csv" ]] || die "unknown category '$category' (try: $SELF list)"
+  ACTION="$action" SCOPE="$scope" DRY_RUN="$dry_run" VERBOSE="$verbose" SKIP_UPDATE="$skip_update" \
+    "$WORKER" "$csv"
+}
+
+# Run a pack/unpack action against a target category or "all".
+run_action() {
+  local action="$1" target="${2:-}"
+  [[ -n "$target" ]] || die "usage: $SELF $action <category|all>"
+  if [[ "$target" == "all" ]]; then
+    local found=0 category
+    while IFS= read -r category; do
+      found=1
+      run_category "$action" "$category"
+      echo
+    done < <(categories)
+    [[ "$found" == "1" ]] || die "no category CSVs found in $LISTS_DIR"
+  else
+    run_category "$action" "$target"
+  fi
+}
+
+# --- parse options (anywhere on the line) and collect positional args ---
+declare -a positional=()
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -s|--scope)     scope="${2:-}"; shift 2 ;;
+    --scope=*)      scope="${1#*=}"; shift ;;
+    -n|--dry-run)   dry_run="1"; shift ;;
+    -v|--verbose)   verbose="1"; shift ;;
+    --skip-update)  skip_update="1"; shift ;;
+    -d|--lists-dir) LISTS_DIR="${2:-}"; shift 2 ;;
+    --lists-dir=*)  LISTS_DIR="${1#*=}"; shift ;;
+    -h|--help)      usage; exit 0 ;;
+    --)             shift; while [[ $# -gt 0 ]]; do positional+=("$1"); shift; done ;;
+    -*)             die "unknown option '$1' (try: $SELF help)" ;;
+    *)              positional+=("$1"); shift ;;
+  esac
+done
+
+[[ "$scope" == "global" || "$scope" == "local" ]] || die "scope must be 'global' or 'local', got '$scope'"
+[[ -x "$WORKER" ]] || die "worker not found or not executable: $WORKER"
+
+action="${positional[0]:-help}"
+target="${positional[1]:-}"
+case "$action" in
+  help)          usage ;;
+  list)          cmd_list ;;
+  pack|unpack)   run_action "$action" "$target" ;;
+  *)             die "unknown command '$action' (expected: pack, unpack, list, help)" ;;
+esac
