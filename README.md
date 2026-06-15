@@ -6,7 +6,7 @@
 
 Install and manage AI agent skills from categorized CSV lists via `npx skills`.
 
-> One command to pack an entire skill set — Python, React, Rust, or any of 20 categories — into your agent config.
+> One command to pack an entire skill set — Python, React, Rust, or any of 23 categories — into your agent config.
 
 ## What it does
 
@@ -64,19 +64,20 @@ skillless pack python
 
 ## Available categories
 
-| Category   | Skills | Category | Skills |
-|------------|--------|----------|--------|
-| default    | 34     | kotlin   | 6      |
-| database   | 13     | laravel  | 5      |
-| swift      | 9      | nest     | 5      |
-| java       | 8      | prisma   | 3      |
-| frontend   | 6      | react    | 3      |
-| python     | 6      | rust     | 3      |
-| typescript | 4      | backend  | 3      |
-| django     | 3      | cpp      | 3      |
-| go         | 3      | android  | 2      |
-| experimental | 2    | stock    | 1      |
-| opencode   | 1      |          |        |
+| Category     | Skills | Category   | Skills |
+|--------------|--------|------------|--------|
+| default      | 36     | kotlin     | 6      |
+| database     | 13     | laravel    | 5      |
+| swift        | 9      | nest       | 5      |
+| java         | 8      | prisma     | 3      |
+| frontend     | 5      | react      | 3      |
+| python       | 6      | rust       | 3      |
+| typescript   | 4      | backend    | 3      |
+| django       | 3      | cpp        | 3      |
+| go           | 3      | android    | 2      |
+| experimental | 2      | stock      | 1      |
+| opencode     | 1      | cli        | 2      |
+| mcp          | 2      |            |        |
 
 Use `skillless list` for the current counts.
 
@@ -115,9 +116,11 @@ wshobson/agents,
 
 ```
 skillless           # Main CLI entrypoint
-lists/              # Category CSV files (21 categories)
-  default.csv       # Cross-cutting skills (34 entries)
+lists/              # Category CSV files (23 categories)
+  default.csv       # Cross-cutting skills (36 entries)
   python.csv        # Python-specific skills
+  cli.csv           # CLI tooling skills
+  mcp.csv           # MCP server skills
   ...
 scripts/
   install-skills.sh # Worker that processes CSV rows via npx skills

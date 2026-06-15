@@ -1,10 +1,10 @@
 repo,skill_name,agents
-avdlee/swift-testing-agent-skill,swift-testing-expert,opencode claude-code codex
-avdlee/swiftui-agent-skill,swiftui-expert-skill,opencode claude-code codex
-avdlee/swiftui-agent-skill,update-swiftui-apis,opencode claude-code codex
-avdlee/xcode-build-optimization-agent-skill,spm-build-analysis,opencode claude-code codex
-avdlee/xcode-build-optimization-agent-skill,xcode-build-benchmark,opencode claude-code codex
-avdlee/xcode-build-optimization-agent-skill,xcode-build-fixer,opencode claude-code codex
-avdlee/xcode-build-optimization-agent-skill,xcode-build-orchestrator,opencode claude-code codex
-avdlee/xcode-build-optimization-agent-skill,xcode-compilation-analyzer,opencode claude-code codex
-avdlee/xcode-build-optimization-agent-skill,xcode-project-analyzer,opencode claude-code codex
+avdlee/swift-testing-agent-skill,swift-testing-expert,
+avdlee/swiftui-agent-skill,swiftui-expert-skill,
+avdlee/swiftui-agent-skill,update-swiftui-apis,
+avdlee/xcode-build-optimization-agent-skill,spm-build-analysis,
+avdlee/xcode-build-optimization-agent-skill,xcode-build-benchmark,
+avdlee/xcode-build-optimization-agent-skill,xcode-build-fixer,
+avdlee/xcode-build-optimization-agent-skill,xcode-build-orchestrator,
+avdlee/xcode-build-optimization-agent-skill,xcode-compilation-analyzer,
+avdlee/xcode-build-optimization-agent-skill,xcode-project-analyzer,

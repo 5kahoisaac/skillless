@@ -1,7 +1,7 @@
 repo,skill_name,agents
-affaan-m/everything-claude-code,python-patterns,opencode claude-code codex
-affaan-m/everything-claude-code,python-testing,opencode claude-code codex
-wshobson/agents,async-python-patterns,opencode claude-code codex
-wshobson/agents,python-packaging,opencode claude-code codex
-wshobson/agents,python-performance-optimization,opencode claude-code codex
-wshobson/agents,python-testing-patterns,opencode claude-code codex
+affaan-m/everything-claude-code,python-patterns,
+affaan-m/everything-claude-code,python-testing,
+wshobson/agents,async-python-patterns,
+wshobson/agents,python-packaging,
+wshobson/agents,python-performance-optimization,
+wshobson/agents,python-testing-patterns,

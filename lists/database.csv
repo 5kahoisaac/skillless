@@ -1,14 +1,14 @@
 repo,skill_name,agents
-affaan-m/everything-claude-code,database-migrations,opencode claude-code codex
-affaan-m/everything-claude-code,mysql-patterns,opencode claude-code codex
-bagelhole/devops-security-agent-skills,mongodb,opencode claude-code codex
-github/awesome-copilot,postgresql-code-review,opencode claude-code codex
-github/awesome-copilot,postgresql-optimization,opencode claude-code codex
-github/awesome-copilot,sql-optimization,opencode claude-code codex
-mindrally/skills,mysql-best-practices,opencode claude-code codex
-neondatabase/agent-skills,neon-postgres,opencode claude-code codex
-planetscale/database-skills,mysql,opencode claude-code codex
-supabase/agent-skills,supabase,opencode claude-code codex
-supabase/agent-skills,supabase-postgres-best-practices,opencode claude-code codex
-wshobson/agents,database-migration,opencode claude-code codex
-wshobson/agents,postgresql-table-design,opencode claude-code codex
+affaan-m/everything-claude-code,database-migrations,
+affaan-m/everything-claude-code,mysql-patterns,
+bagelhole/devops-security-agent-skills,mongodb,
+github/awesome-copilot,postgresql-code-review,
+github/awesome-copilot,postgresql-optimization,
+github/awesome-copilot,sql-optimization,
+mindrally/skills,mysql-best-practices,
+neondatabase/agent-skills,neon-postgres,
+planetscale/database-skills,mysql,
+supabase/agent-skills,supabase,
+supabase/agent-skills,supabase-postgres-best-practices,
+wshobson/agents,database-migration,
+wshobson/agents,postgresql-table-design,

@@ -1,6 +1,6 @@
 repo,skill_name,agents
-affaan-m/everything-claude-code,nestjs-patterns,opencode claude-code codex
-aj-geddes/useful-ai-prompts,nodejs-express-server,opencode claude-code codex
-kadajett/agent-nestjs-skills,nestjs-best-practices,opencode claude-code codex
-sickn33/antigravity-awesome-skills,nodejs-best-practices,opencode claude-code codex
-wshobson/agents,nodejs-backend-patterns,opencode claude-code codex
+affaan-m/everything-claude-code,nestjs-patterns,
+aj-geddes/useful-ai-prompts,nodejs-express-server,
+kadajett/agent-nestjs-skills,nestjs-best-practices,
+sickn33/antigravity-awesome-skills,nodejs-best-practices,
+wshobson/agents,nodejs-backend-patterns,

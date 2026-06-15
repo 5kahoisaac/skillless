@@ -1,4 +1,4 @@
 repo,skill_name,agents
-prisma/skills,prisma-database-setup,opencode claude-code codex
-prisma/skills,prisma-postgres,opencode claude-code codex
-prisma/skills,prisma-upgrade-v7,opencode claude-code codex
+prisma/skills,prisma-database-setup,
+prisma/skills,prisma-postgres,
+prisma/skills,prisma-upgrade-v7,

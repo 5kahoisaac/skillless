@@ -1,7 +1,6 @@
 repo,skill_name,agents
-affaan-m/everything-claude-code,frontend-patterns,opencode claude-code codex
-affaan-m/everything-claude-code,frontend-slides,opencode claude-code codex
-anthropics/skills,frontend-design,opencode claude-code codex
-coreyhaines31/marketingskills,seo-audit,opencode claude-code codex
-figma/mcp-server-guide,,opencode claude-code codex
-vercel-labs/agent-skills,web-design-guidelines,opencode claude-code codex
+affaan-m/everything-claude-code,frontend-patterns,
+affaan-m/everything-claude-code,frontend-slides,
+anthropics/skills,frontend-design,
+coreyhaines31/marketingskills,seo-audit,
+vercel-labs/agent-skills,web-design-guidelines,
