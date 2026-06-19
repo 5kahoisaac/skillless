@@ -2,8 +2,8 @@
 # skillless — install/remove agent skills from category CSV lists via `npx skills`.
 #
 # Usage:
-#   skillless [options] pack <category|all>     install a category (e.g. skillless pack react)
-#   skillless [options] unpack <category|all>   remove a category (e.g. skillless unpack react)
+#   skillless [options] pack <category|all>...   install one or more categories (e.g. skillless pack default frontend backend)
+#   skillless [options] unpack <category|all>... remove one or more categories (e.g. skillless unpack react vue)
 #   skillless list                              show categories and skill counts
 #   skillless upgrade                           update skillless to latest version
 #   skillless help                              show this help
@@ -63,21 +63,31 @@ run_category() {
     "$WORKER" "$csv"
 }
 
-# Run a pack/unpack action against a target category or "all".
+# Run a pack/unpack action against every CSV category found in LISTS_DIR.
+run_all() {
+  local action="$1" found=0 category
+  while IFS= read -r category; do
+    found=1
+    run_category "$action" "$category"
+    echo
+  done < <(categories)
+  [[ "$found" == "1" ]] || die "no category CSVs found in $LISTS_DIR"
+}
+
+# Run a pack/unpack action against one or more target categories (or "all").
+# Each positional after the action is treated as a category; "all" anywhere
+# expands to every category.
 run_action() {
-  local action="$1" target="${2:-}"
-  [[ -n "$target" ]] || die "usage: $SELF $action <category|all>"
-  if [[ "$target" == "all" ]]; then
-    local found=0 category
-    while IFS= read -r category; do
-      found=1
-      run_category "$action" "$category"
-      echo
-    done < <(categories)
-    [[ "$found" == "1" ]] || die "no category CSVs found in $LISTS_DIR"
-  else
-    run_category "$action" "$target"
-  fi
+  local action="$1"; shift
+  [[ $# -gt 0 ]] || die "usage: $SELF $action <category|all> [category...]"
+  local target
+  for target in "$@"; do
+    if [[ "$target" == "all" ]]; then
+      run_all "$action"
+    else
+      run_category "$action" "$target"
+    fi
+  done
 }
 
 # --- parse options (anywhere on the line) and collect positional args ---
@@ -102,11 +112,11 @@ done
 [[ -x "$WORKER" ]] || die "worker not found or not executable: $WORKER"
 
 action="${positional[0]:-help}"
-target="${positional[1]:-}"
+targets=("${positional[@]:1}")
 case "$action" in
   help)          usage ;;
   list)          cmd_list ;;
   upgrade)       git -C "$SCRIPT_DIR" fetch && git -C "$SCRIPT_DIR" reset --hard origin/main ;;
-  pack|unpack)   run_action "$action" "$target" ;;
+  pack|unpack)   run_action "$action" ${targets[@]+"${targets[@]}"} ;;
   *)             die "unknown command '$action' (expected: pack, upgrade, unpack, list, help)" ;;
 esac
