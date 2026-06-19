@@ -18,10 +18,11 @@ non-trivial one-shot build requests: reconstruct intent, decide scope, design fi
 deliver something a human can run or use.
 
 ```
-skillless pack python     # install all Python skills
-skillless unpack react    # remove all React skills
-skillless list            # show available categories
-skillless upgrade         # self-update to latest version
+skillless pack python                    # install all Python skills
+skillless pack default frontend backend  # install multiple categories at once
+skillless unpack react                   # remove all React skills
+skillless list                           # show available categories
+skillless upgrade                        # self-update to latest version
 ```
 
 ## Quick start
@@ -44,10 +45,10 @@ skillless pack python
 
 ## Commands
 
-| Command                  | Description                                |
-|--------------------------|--------------------------------------------|
-| `pack <category\|all>`   | Install all skills in a category           |
-| `unpack <category\|all>` | Remove all skills in a category            |
+| Command                          | Description                                            |
+|----------------------------------|--------------------------------------------------------|
+| `pack <category\|all>...`        | Install one or more categories (space-separated)       |
+| `unpack <category\|all>...`      | Remove one or more categories (space-separated)        |
 | `list`                   | Show available categories and skill counts |
 | `upgrade`                | Update skillless to the latest version     |
 | `help`                   | Show usage information                     |
@@ -66,7 +67,7 @@ skillless pack python
 
 | Category     | Skills | Category   | Skills |
 |--------------|--------|------------|--------|
-| default      | 36     | kotlin     | 6      |
+| default      | 35     | kotlin     | 6      |
 | database     | 13     | laravel    | 5      |
 | swift        | 9      | nest       | 5      |
 | java         | 8      | prisma     | 3      |
@@ -86,13 +87,15 @@ Use `skillless list` for the current counts.
 **Global** (default) — skills go into your user-level agent config (`~/.agents/skills/`, `~/.claude/skills/`, etc.).
 
 ```bash
-skillless pack python          # global
+skillless pack python                   # single category
+skillless pack default frontend backend # multiple categories
 ```
 
 **Local** — skills are vendored into the current project's `.agents/skills/` directory, versioned with the repo.
 
 ```bash
-skillless -s local pack python # project-level
+skillless -s local pack python                   # single category, project-level
+skillless -s local pack default frontend backend # multiple categories, project-level
 ```
 
 ## CSV format
