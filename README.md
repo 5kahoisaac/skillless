@@ -77,7 +77,7 @@ skillless pack python
 | django       | 3      | cpp        | 3      |
 | go           | 3      | android    | 2      |
 | experimental | 2      | stock      | 1      |
-| opencode     | 1      | cli        | 2      |
+| opencode     | 1      | cli        | 13     |
 | mcp          | 2      |            |        |
 
 Use `skillless list` for the current counts.
