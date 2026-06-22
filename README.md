@@ -45,13 +45,13 @@ skillless pack python
 
 ## Commands
 
-| Command                          | Description                                            |
-|----------------------------------|--------------------------------------------------------|
-| `pack <category\|all>...`        | Install one or more categories (space-separated)       |
-| `unpack <category\|all>...`      | Remove one or more categories (space-separated)        |
-| `list`                   | Show available categories and skill counts |
-| `upgrade`                | Update skillless to the latest version     |
-| `help`                   | Show usage information                     |
+| Command                     | Description                                      |
+|-----------------------------|--------------------------------------------------|
+| `pack <category\|all>...`   | Install one or more categories (space-separated) |
+| `unpack <category\|all>...` | Remove one or more categories (space-separated)  |
+| `list`                      | Show available categories and skill counts       |
+| `upgrade`                   | Update skillless to the latest version           |
+| `help`                      | Show usage information                           |
 
 ## Options
 
@@ -65,20 +65,20 @@ skillless pack python
 
 ## Available categories
 
-| Category     | Skills | Category   | Skills |
-|--------------|--------|------------|--------|
-| default      | 35     | kotlin     | 6      |
-| database     | 13     | laravel    | 5      |
-| swift        | 9      | nest       | 5      |
-| java         | 8      | prisma     | 3      |
-| frontend     | 5      | react      | 3      |
-| python       | 6      | rust       | 3      |
-| typescript   | 4      | backend    | 3      |
-| django       | 3      | cpp        | 3      |
-| go           | 3      | android    | 2      |
-| experimental | 2      | stock      | 1      |
-| opencode     | 1      | cli        | 13     |
-| mcp          | 2      |            |        |
+| Category     | Skills | Category | Skills |
+|--------------|--------|----------|--------|
+| default      | 35     | kotlin   | 6      |
+| database     | 13     | laravel  | 5      |
+| swift        | 9      | nest     | 5      |
+| java         | 8      | prisma   | 3      |
+| frontend     | 5      | react    | 3      |
+| python       | 6      | rust     | 3      |
+| typescript   | 4      | backend  | 3      |
+| django       | 3      | cpp      | 3      |
+| go           | 3      | android  | 2      |
+| experimental | 2      | stock    | 1      |
+| opencode     | 1      | cli      | 13     |
+| mcp          | 2      |          |        |
 
 Use `skillless list` for the current counts.
 
