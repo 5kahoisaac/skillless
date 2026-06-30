@@ -1,11 +1,8 @@
 repo,skill_name,agents
-# skill_name empty -> install ALL skills from the repo
-# agents: space-separated (e.g. ""); empty -> auto-detect
 affaan-m/everything-claude-code,ai-regression-testing,
 affaan-m/everything-claude-code,coding-standards,
 affaan-m/everything-claude-code,compose-multiplatform-patterns,
 affaan-m/everything-claude-code,configure-ecc,
-affaan-m/everything-claude-code,continuous-learning,
 affaan-m/everything-claude-code,continuous-learning-v2,
 affaan-m/everything-claude-code,e2e-testing,
 affaan-m/everything-claude-code,eval-harness,
@@ -23,9 +20,7 @@ anthropics/skills,skill-creator,
 anthropics/skills,xlsx,
 brianlovin/claude-config,simplify,
 cloudflare/security-audit-skill,security-audit,
-coreyhaines31/marketingskills,copywriting,
 davila7/claude-code-templates,markitdown,
-github/awesome-copilot,create-readme,
 github/awesome-copilot,documentation-writer,
 github/awesome-copilot,git-commit,
 microsoft/playwright-cli,playwright-cli,
