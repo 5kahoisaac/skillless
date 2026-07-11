@@ -67,7 +67,7 @@ skillless pack python
 
 | Category     | Skills | Category | Skills |
 |--------------|--------|----------|--------|
-| default      | 33     | kotlin   | 6      |
+| default      | 32     | kotlin   | 6      |
 | database     | 13     | laravel  | 5      |
 | swift        | 9      | nest     | 5      |
 | java         | 8      | prisma   | 3      |
@@ -76,7 +76,7 @@ skillless pack python
 | typescript   | 4      | backend  | 3      |
 | django       | 3      | cpp      | 3      |
 | go           | 3      | android  | 2      |
-| experimental | 2      | stock    | 1      |
+| experimental | 1      | stock    | 1      |
 | opencode     | 1      | writing  | 3      |
 | mcp          | 2      | cli      | 13     |
 
